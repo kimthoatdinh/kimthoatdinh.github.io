@@ -30,7 +30,8 @@
         </style>
         
     </head>
-    <body id="body">
+    <body>
+        <p id="valbin">0</p>
         <div class="gridiv">
             <button class="pop" style="background-color: rgb(255, 187, 141)" id="one" onclick="pop(one)"></button>
             <button class="pop" style="background-color: rgb(255, 187, 141)" id="two" onclick="pop(two)"></button>
@@ -54,13 +55,87 @@
         console.log(eight);
         console.log(nine);
 
+        let binval = 0;
 
         function pop(popper) {
             if (popper.style.backgroundColor == "rgb(255, 187, 141)") {
-                popper.style.backgroundColor = "rgb(255, 155, 88)";         
+                popper.style.backgroundColor = "rgb(255, 155, 88)";
+
+                if (popper.id == "one") {
+                    binval += 256;
+                };
+
+                if (popper.id == "two") {
+                    binval += 128;
+                };
+
+                if (popper.id == "three") {
+                    binval += 64;
+                };
+
+                if (popper.id == "four") {
+                    binval += 32;
+                };
+
+                if (popper.id == "five") {
+                    binval += 16;
+                };
+
+                if (popper.id == "six") {
+                    binval += 8;
+                };
+
+                if (popper.id == "seven") {
+                    binval += 4;
+                };
+
+                if (popper.id == "eight") {
+                    binval += 2;
+                };
+
+                if (popper.id == "nine") {
+                    binval += 1;
+                };
+            
             } else {
                 popper.style.backgroundColor = "rgb(255, 187, 141)";
+                if (popper.id == "one") {
+                    binval -= 256;
+                };
+
+                if (popper.id == "two") {
+                    binval -= 128;
+                };
+
+                if (popper.id == "three") {
+                    binval -= 64;
+                };
+
+                if (popper.id == "four") {
+                    binval -= 32;
+                };
+
+                if (popper.id == "five") {
+                    binval -= 16;
+                };
+
+                if (popper.id == "six") {
+                    binval -= 8;
+                };
+
+                if (popper.id == "seven") {
+                    binval -= 4;
+                };
+
+                if (popper.id == "eight") {
+                    binval -= 2;
+                };
+
+                if (popper.id == "nine") {
+                    binval -= 1;
+                };
             };
+            valbin.innerHTML = String(binval);
         };
     </script>
 </html>
